@@ -11,7 +11,9 @@ describe('WalletAddressesController', () => {
       providers: [WalletAddressesService],
     }).compile();
 
-    controller = module.get<WalletAddressesController>(WalletAddressesController);
+    controller = module.get<WalletAddressesController>(
+      WalletAddressesController,
+    );
   });
 
   it('should be defined', () => {

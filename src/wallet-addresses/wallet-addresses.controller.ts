@@ -1,11 +1,21 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { WalletAddressesService } from './wallet-addresses.service';
 import { CreateWalletAddressDto } from './dto/create-wallet-address.dto';
 import { UpdateWalletAddressDto } from './dto/update-wallet-address.dto';
 
 @Controller('wallet-addresses')
 export class WalletAddressesController {
-  constructor(private readonly walletAddressesService: WalletAddressesService) {}
+  constructor(
+    private readonly walletAddressesService: WalletAddressesService,
+  ) {}
 
   @Post()
   create(@Body() createWalletAddressDto: CreateWalletAddressDto) {
@@ -23,7 +33,10 @@ export class WalletAddressesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateWalletAddressDto: UpdateWalletAddressDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateWalletAddressDto: UpdateWalletAddressDto,
+  ) {
     return this.walletAddressesService.update(+id, updateWalletAddressDto);
   }
 

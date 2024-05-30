@@ -6,6 +6,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import { User } from 'src/users/entities/user.entity';
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 
 @Entity()
 export class WalletAddress {
@@ -13,6 +14,8 @@ export class WalletAddress {
   id: number;
 
   @Column({ nullable: false, unique: true, type: 'text' })
+  @IsNotEmpty()
+  @IsString()
   address: string;
 
   @ManyToOne(() => User, (user) => user.walletAddresses)
@@ -20,5 +23,7 @@ export class WalletAddress {
   user: User;
 
   @Column()
+  @IsNotEmpty()
+  @IsNumber()
   userId: number;
 }

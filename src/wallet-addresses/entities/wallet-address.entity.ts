@@ -15,7 +15,7 @@ export class WalletAddress {
   @Column({ nullable: false, unique: true, type: 'text' })
   address: string;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, (user) => user.walletAddresses)
   @JoinColumn({ name: 'userId' })
   user: User;
 

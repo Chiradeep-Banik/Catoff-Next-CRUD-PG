@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateWalletAddressDto } from './dto/create-wallet-address.dto';
 import { UpdateWalletAddressDto } from './dto/update-wallet-address.dto';
-import { WalletAddress } from 'src/wallet-addresses/entities/wallet-address.entity';
+import { WalletAddress } from './entities/wallet-address.entity';
 
 @Injectable()
 export class WalletAddressesService {

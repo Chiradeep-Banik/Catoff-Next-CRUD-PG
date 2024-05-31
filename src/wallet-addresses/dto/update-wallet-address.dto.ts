@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateWalletAddressDto } from './create-wallet-address.dto';
-import { ApiProperty } from '@nestjs/swagger'; // Import ApiProperty decorator
+import { ApiProperty } from '@nestjs/swagger';
 import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UpdateWalletAddressDto extends PartialType(

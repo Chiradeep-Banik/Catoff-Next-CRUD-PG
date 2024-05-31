@@ -1,5 +1,5 @@
-import { IsString, IsNumber, IsOptional } from 'class-validator';
-import { ApiProperty } from '@nestjs/swagger'; // Import ApiProperty decorator
+import { IsString, IsNumber } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateWalletAddressDto {
   @IsNumber()

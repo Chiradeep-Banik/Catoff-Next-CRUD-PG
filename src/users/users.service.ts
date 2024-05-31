@@ -2,7 +2,7 @@ import { Body, Injectable, NotFoundException, Param } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
-import { User } from 'src/users/entities/user.entity';
+import { User } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import {
   ApiTags,
@@ -11,7 +11,7 @@ import {
   ApiNotFoundResponse,
   ApiParam,
 } from '@nestjs/swagger';
-import { WalletAddress } from 'src/wallet-addresses/entities/wallet-address.entity';
+import { WalletAddress } from '../wallet-addresses/entities/wallet-address.entity';
 
 @ApiTags('Users')
 @Injectable()
